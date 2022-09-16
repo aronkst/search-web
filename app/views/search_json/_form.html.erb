@@ -1,4 +1,4 @@
-<%= form_with(model: search, url: url) do |form| %>
+<%= form_with(model: search, url: search_json_path(@search)) do |form| %>
   <% if search.errors.any? %>
     <div class="alert alert-error shadow-lg grid justify-items-start my-5">
       <div>
@@ -16,18 +16,8 @@
   <% end %>
 
   <div class="form-control">
-    <%= form.label :title, "Title:" %>
-    <%= form.text_field :title, class: "input input-bordered w-full" %>
-  </div>
-
-  <div class="form-control mt-5">
-    <%= form.label :url, "URL:" %>
-    <%= form.text_field :url, class: "input input-bordered w-full" %>
-  </div>
-
-  <div class="form-control mt-5">
-    <%= form.label :javascript, "JavaScript:" %>
-    <%= form.check_box :javascript, class: "checkbox checkbox-primary" %>
+    <%= form.label :json, "JSON:" %>
+    <%= form.text_area :json, class: "textarea textarea-bordered w-full", rows: 20 %>
   </div>
 
   <div class="my-5">
