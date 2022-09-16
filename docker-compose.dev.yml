@@ -9,3 +9,9 @@ services:
     image: redis:7
     ports:
       - 6379:6379
+  scraping:
+    build: https://github.com/aronkst/ruby-web-scraping.git#main
+    environment:
+      - APP_ENV=production
+    ports:
+      - 3001:3000
