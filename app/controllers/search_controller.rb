@@ -7,7 +7,7 @@ class SearchController < ApplicationController
 
   def create
     @search = Search.new(search_params)
-    if @search.save
+    if @search.save && @search.set_html
       redirect_to root_url, notice: "Search was successfully created."
     else
       render :new, status: :unprocessable_entity
@@ -18,7 +18,7 @@ class SearchController < ApplicationController
   end
 
   def update
-    if @search.update(search_params)
+    if @search.update(search_params) && @search.set_html
       redirect_to root_url, notice: "Search was successfully updated."
     else
       render :edit, status: :unprocessable_entity
