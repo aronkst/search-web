@@ -30,6 +30,21 @@
     <%= form.check_box :javascript, class: "checkbox checkbox-primary" %>
   </div>
 
+  <div class="form-control mt-5">
+    <%= form.label :json, "JSON:" %>
+    <%= form.text_area :json, class: "textarea textarea-bordered w-full", rows: 20 %>
+  </div>
+
+  <div class="form-control mt-5">
+    <%= form.label :next_page, "Next Page:" %>
+    <%= form.text_field :next_page, class: "input input-bordered w-full" %>
+  </div>
+
+  <div class="form-control mt-5">
+    <%= form.label :count_pages, "Count Pages:" %>
+    <%= form.number_field :count_pages, class: "input input-bordered w-full" %>
+  </div>
+
   <div class="my-5">
     <%= form.submit class: "btn btn-primary" %>
   </div>
