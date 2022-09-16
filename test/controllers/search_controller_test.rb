@@ -1,6 +1,6 @@
 require "test_helper"
 
-class SearchBeginControllerTest < ActionDispatch::IntegrationTest
+class SearchControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

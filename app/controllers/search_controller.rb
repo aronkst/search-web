@@ -1,4 +1,4 @@
-class SearchBeginController < ApplicationController
+class SearchController < ApplicationController
   before_action :set_search, only: %i[edit update]
 
   def new
