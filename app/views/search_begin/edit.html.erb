@@ -1,0 +1,7 @@
+<h1 class="text-2xl mb-5">Edit Search</h1>
+
+<%= render "form", search: @search, url: search_begin_path(@search), submit_class: "btn btn-accent" %>
+
+<div>
+  <%= link_to "Back to Root", root_path, class: "btn" %>
+</div>
