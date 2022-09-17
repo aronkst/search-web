@@ -5,8 +5,8 @@ class Search < ApplicationRecord
   def set_html
     return if url.blank?
 
-    browser = Browser.new(self.url, self.javascript)
-    self.html = browser.html
+    htmlClass = Html.new(self.url, self.javascript)
+    self.html = htmlClass.html
     self.save
   end
 end

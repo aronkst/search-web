@@ -2,6 +2,12 @@
 
 <%= render "form", search: @search %>
 
+<% if @data.present? %>
+  <pre>
+<%= JSON.pretty_generate(JSON.parse(@data)) %>
+  </pre>
+<% end %>
+
 <div>
   <%= link_to "Back to Root", root_path, class: "btn" %>
 </div>

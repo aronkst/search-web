@@ -6,7 +6,7 @@ class SearchJsonController < ApplicationController
 
   def update
     if @search.update(search_params)
-      redirect_to edit_search_value_url(@search), notice: "JSON was successfully saved."
+      redirect_to edit_search_json_url(@search), notice: "JSON was successfully saved."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -16,6 +16,7 @@ class SearchJsonController < ApplicationController
 
   def set_search
     @search = Search.find(params[:id])
+    @data = Find.new(@search.html, @search.json).data
   end
 
   def search_params

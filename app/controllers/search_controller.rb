@@ -32,6 +32,6 @@ class SearchController < ApplicationController
   end
 
   def search_params
-    params.require(:search).permit(:title, :url, :javascript, :json, :values, :next_page, :count_pages)
+    params.require(:search).permit(:title, :url, :javascript, :next_page, :count_pages)
   end
 end

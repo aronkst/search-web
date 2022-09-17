@@ -2,7 +2,7 @@ require 'uri'
 require 'net/http'
 require 'json'
 
-class Browser
+class Html
   attr_reader :html
 
   def initialize(url, javascript)
