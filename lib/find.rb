@@ -15,8 +15,6 @@ class Find
   private
 
   def load
-    puts body
-
     scraping_url = ENV['SCRAPING_URL'] || 'http://localhost:3001/find'
     uri = URI(scraping_url)
 
@@ -33,7 +31,7 @@ class Find
   def body
     {
       html: @html,
-      find: JSON.parse(@find)["find"]
+      find: JSON.parse(@find)
     }.to_json
   end
 end

@@ -8,7 +8,7 @@ class CreateSearches < ActiveRecord::Migration[7.0]
       t.string :next_page, null: false, default: ""
       t.integer :count_pages, null: false, default: 1
       t.text :html, null: false, default: ""
-      t.text :values, null: false, default: ""
+      t.json :values, null: false, default: "{}"
       t.boolean :finish, null: false, default: false
 
       t.timestamps

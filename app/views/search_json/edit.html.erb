@@ -3,9 +3,13 @@
 <%= render "form", search: @search %>
 
 <% if @data.present? %>
-  <pre>
+<pre>
+<% begin %>
 <%= JSON.pretty_generate(JSON.parse(@data)) %>
-  </pre>
+<% rescue %>
+ERROR
+<% end %>
+</pre>
 <% end %>
 
 <div>
