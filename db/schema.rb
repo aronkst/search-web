@@ -18,10 +18,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_15_010227) do
     t.string "title", null: false
     t.string "url", null: false
     t.boolean "javascript", default: false, null: false
-    t.text "json", default: "", null: false
+    t.json "json", default: "{}", null: false
     t.string "next_page", default: "", null: false
     t.integer "count_pages", default: 1, null: false
     t.text "html", default: "", null: false
+    t.text "values", default: "", null: false
     t.boolean "finish", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
