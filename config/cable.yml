@@ -1,4 +1,5 @@
 development:
+  url: <%= ENV["REDIS_HOST"] || "redis://localhost:6379/1" %>
   adapter: async
 
 test:

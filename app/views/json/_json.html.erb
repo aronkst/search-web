@@ -1,0 +1,9 @@
+<% if json.present? %>
+  <pre>
+    <% begin %>
+<%= JSON.pretty_generate(json.is_a?(String) ? JSON.parse(json) : json) %>
+    <% rescue => error %>
+      <%= error %>
+    <% end %>
+  </pre>
+<% end %>

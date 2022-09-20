@@ -10,9 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_15_010227) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_18_154050) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "run_values", force: :cascade do |t|
+    t.bigint "run_id", null: false
+    t.integer "page"
+    t.json "values"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["run_id"], name: "index_run_values_on_run_id"
+  end
+
+  create_table "runs", force: :cascade do |t|
+    t.bigint "search_id", null: false
+    t.boolean "finish", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["search_id"], name: "index_runs_on_search_id"
+  end
 
   create_table "searches", force: :cascade do |t|
     t.string "title", null: false
@@ -28,4 +45,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_15_010227) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "run_values", "runs"
+  add_foreign_key "runs", "searches"
 end

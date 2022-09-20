@@ -1,4 +1,4 @@
-<%= form_with(model: search, url: search_value_path(@search)) do |form| %>
+<%= form_with(model: search, url: search_value_path(search)) do |form| %>
   <% if search.errors.any? %>
     <div class="alert alert-error shadow-lg grid justify-items-start my-5">
       <div>
@@ -22,6 +22,5 @@
 
   <div class="my-5">
     <%= form.submit class: "btn btn-secondary" %>
-    <%= link_to "Finish", edit_search_finish_path(@search), class: "btn btn-secondary" %>
   </div>
 <% end %>

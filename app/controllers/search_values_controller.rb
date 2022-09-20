@@ -16,6 +16,8 @@ class SearchValuesController < ApplicationController
 
   def set_search
     @search = Search.find(params[:id])
+    @data = Find.new(@search.html, @search.json).data
+    @final = Show.new(@data, @search.values).final
   end
 
   def search_params

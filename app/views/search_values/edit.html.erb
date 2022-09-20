@@ -1,18 +1,30 @@
 <h1 class="text-2xl mb-5">Values</h1>
 
 <p class="mb-4">Enter the column values to be displayed in the template.</p>
+
 <p class="font-bold">Example:</p>
-<p>Key Type</p>
-<p>ListKey Key Type</p>
+<pre>
+{
+  "[KEY]": "[TYPE]",
+  "[KEY]": {
+    "[KEY]": "[TYPE]",
+    "[KEY]": "[TYPE]"
+  }
+}
+</pre>
+
 <p class="mt-4 font-bold">Types:</p>
-<p>Title</p>
-<p>Text</p>
-<p>Image</p>
-<p>Video</p>
-<p>Link</p>
+<p>title</p>
+<p>text</p>
+<p>image</p>
+<p>video</p>
+<p>link</p>
 
 <%= render "form", search: @search %>
+<%= render partial: 'json/json', locals: { json: @final } %>
+<%= render partial: 'data/data', locals: { final: @final } %>
 
 <div>
   <%= link_to "Back to Root", root_path, class: "btn" %>
+  <%= link_to "Finish", edit_search_finish_path(@search), class: "btn btn-secondary" %>
 </div>

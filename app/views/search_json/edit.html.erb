@@ -1,17 +1,9 @@
 <h1 class="text-2xl mb-5">Search JSON (ruby-web-scraping)</h1>
 
 <%= render "form", search: @search %>
-
-<% if @data.present? %>
-<pre>
-<% begin %>
-<%= JSON.pretty_generate(JSON.parse(@data)) %>
-<% rescue %>
-ERROR
-<% end %>
-</pre>
-<% end %>
+<%= render partial: 'json/json', locals: { json: @data } %>
 
 <div>
   <%= link_to "Back to Root", root_path, class: "btn" %>
+  <%= link_to "Values", edit_search_value_path(@search), class: "btn btn-secondary" %>
 </div>

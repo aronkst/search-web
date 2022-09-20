@@ -4,8 +4,8 @@ class Show
   attr_reader :final
 
   def initialize(data, values)
-    @data = data
-    @values = values
+    @data = JSON.parse(data)
+    @values = JSON.parse(values)
 
     create
   end
@@ -13,28 +13,30 @@ class Show
   private
 
   def create
-    
+    @final = {}
+
+    @values.each do |key, value|
+      if is_list?(value)
+        @final[key] = []
+
+        @data[key].each do |data_values|
+          temp_values = {}
+
+          @values[key].each do |key_list, value_list|
+            temp_values[key_list] = {"type" => value_list, "value" => data_values[key_list]}
+          end
+
+          @final[key].append(temp_values)
+        end
+      else
+        @final[key] = {"type" => value, "value" => @data[key]}
+      end
+    end
   rescue
-    @data = nil
+    @final = nil
   end
 
-  def body
-    {
-      html: @html,
-      find: JSON.parse(@find)["find"]
-    }.to_json
+  def is_list?(value)
+    value.is_a?(Hash)
   end
 end
-
-{
-  title: {
-    type: "",
-    value: ""
-  },
-  list: {
-    abc: {
-      type: "",
-      value: ""
-    }
-  }
-}

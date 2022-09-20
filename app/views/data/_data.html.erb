@@ -1,0 +1,18 @@
+<% final.each do |key, value| %>
+  <% if value.is_a?(Hash) %>
+    <%= render partial: 'data/value', locals: { key: key, value: value } %>
+    <div class="divider"></div>
+  <% elsif value.is_a?(Array) %>
+    <div class="badge badge-accent rounded-bl-none"><%= key %></div>
+    <div class="border-l-4 border-amber-500 pl-5 pt-5">
+      <% value.each do |values| %>
+        <div>
+          <% values.each do |key_child, value_child| %>
+            <%= render partial: 'data/value', locals: { key: key_child, value: value_child } %>
+          <% end %>
+        </div>
+        <div class="divider"></div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

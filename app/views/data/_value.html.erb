@@ -1,0 +1,13 @@
+<div class="badge badge-accent"><%= key %></div>
+<% case value["type"] %>
+<% when "title" %>
+  <%= render partial: 'data/title', locals: { value: value["value"] } %>
+<% when "text" %>
+  <%= render partial: 'data/text', locals: { value: value["value"] } %>
+<% when "image" %>
+  <%= render partial: 'data/image', locals: { value: value["value"], key: key } %>
+<% when "video" %>
+  <%= render partial: 'data/video', locals: { value: value["value"] } %>
+<% when "link" %>
+  <%= render partial: 'data/link', locals: { value: value["value"] } %>
+<% end %>

@@ -1,9 +1,14 @@
-<h1>Root#index</h1>
-<p>Find me in app/views/root/index.html.erb</p>
+<h1 class="text-2xl mb-5">All Search</h1>
 
-<button class="btn">Button</button>
-<button class="btn btn-primary">Button</button>
-<button class="btn btn-secondary">Button</button>
-<button class="btn btn-accent">Button</button>
-<button class="btn btn-ghost">Button</button>
-<button class="btn btn-link">Button</button>
+<% @all_search.each do |search| %>
+  <div class="flex flex-row gap-4">
+    <p class="grow place-self-center"><%= search.title %></p>
+    <div class="flex-none btn-group">
+      <%= link_to "Show", run_index_path(search), class: "btn" %>
+      <%= link_to "Edit", edit_search_path(search), class: "btn" %>
+    </div>
+    <%= button_to "Run", run_create_path(search), method: :post, form_class: "flex-none" , class: "btn btn-primary", disabled: !search.finish %>
+    <%= button_to "Delete", run_destroy_path(search), method: :delete, form_class: "flex-none" , class: "btn btn-error" %>
+  </div>
+  <div class="divider"></div>
+<% end %>

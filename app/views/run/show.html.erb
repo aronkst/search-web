@@ -1,0 +1,14 @@
+<%= turbo_stream_from(@run) %>
+
+<div class="flex flex-row mb-5">
+  <h1 class="grow place-self-center text-2xl">Values from Run <%= @run.created_at.to_formatted_s(:db) %> and Search <%= @search.title %></h1>
+  <%= turbo_frame_tag(:finish) do %>
+    <%= render partial: 'run/finish', locals: { run: @run } %>
+  <% end %>
+</div>
+
+<%= turbo_frame_tag(:values) do %>
+  <% @run_values.each do |values| %>
+    <%= render partial: 'run/values', locals: { values: values } %>
+  <% end %>
+<% end %>
