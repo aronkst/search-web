@@ -16,7 +16,7 @@ class Show
     @final = {}
 
     @values.each do |key, value|
-      if is_list?(value)
+      if list?(value)
         @final[key] = []
 
         @data[key].each do |data_values|
@@ -36,7 +36,7 @@ class Show
     @final = nil
   end
 
-  def is_list?(value)
+  def list?(value)
     value.is_a?(Hash)
   end
 end
