@@ -21,11 +21,7 @@ class SearchWebJob < ApplicationJob
 
       if @search.count_pages > 1 && @search.next_page?
         data = JSON.parse(data)
-        if data.present? && data[@search.next_page].present?
-          url = data[@search.next_page]
-        else
-          url = nil
-        end
+        url = (data[@search.next_page] if data.present? && data[@search.next_page].present?)
       end
 
       @run.run_values.create!(values: final.to_json, page: page)

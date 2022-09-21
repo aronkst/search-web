@@ -9,6 +9,6 @@ class RunValues < ApplicationRecord
   private
 
   def stream_created
-    broadcast_append_to(self.run, target: :values, partial: 'run/values', locals: { values: self })
+    broadcast_append_to(run, target: :values, partial: 'run/values', locals: { values: self })
   end
 end

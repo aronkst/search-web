@@ -23,13 +23,13 @@ class Show
           temp_values = {}
 
           @values[key].each do |key_list, value_list|
-            temp_values[key_list] = {"type" => value_list, "value" => data_values[key_list]}
+            temp_values[key_list] = { 'type' => value_list, 'value' => data_values[key_list] }
           end
 
           @final[key].append(temp_values)
         end
       else
-        @final[key] = {"type" => value, "value" => @data[key]}
+        @final[key] = { 'type' => value, 'value' => @data[key] }
       end
     end
   rescue

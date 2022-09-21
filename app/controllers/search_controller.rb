@@ -8,18 +8,17 @@ class SearchController < ApplicationController
   def create
     @search = Search.new(search_params)
     if @search.save && @search.set_html
-      redirect_to edit_search_json_url(@search), notice: "Search was successfully created."
+      redirect_to edit_search_json_url(@search), notice: 'Search was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @search.update(search_params) && @search.set_html
-      redirect_to edit_search_json_url(@search), notice: "Search was successfully updated."
+      redirect_to edit_search_json_url(@search), notice: 'Search was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end

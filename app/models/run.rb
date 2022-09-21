@@ -12,6 +12,6 @@ class Run < ApplicationRecord
   end
 
   def start_job
-    SearchWebJob.perform_later(self.id)
+    SearchWebJob.perform_later(id)
   end
 end

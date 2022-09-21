@@ -12,12 +12,12 @@ class RunController < ApplicationController
 
   def create
     run = @search.runs.create!
-    redirect_to run_show_url(@search, run), notice: "Run was successfully created."
+    redirect_to run_show_url(@search, run), notice: 'Run was successfully created.'
   end
 
   def destroy
     @search.destroy!
-    redirect_to root_url, notice: "Search was successfully deleted."
+    redirect_to root_url, notice: 'Search was successfully deleted.'
   end
 
   private

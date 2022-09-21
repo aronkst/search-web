@@ -1,12 +1,11 @@
 class SearchValuesController < ApplicationController
   before_action :set_search
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @search.update(search_params)
-      redirect_to edit_search_value_url(@search), notice: "Values was successfully saved."
+      redirect_to edit_search_value_url(@search), notice: 'Values was successfully saved.'
     else
       render :edit, status: :unprocessable_entity
     end
