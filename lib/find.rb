@@ -15,8 +15,9 @@ class Find
   private
 
   def load
-    scraping_url = ENV['SCRAPING_URL'] || 'http://localhost:3001/find'
-    uri = URI(scraping_url)
+    scraping_host = ENV['SCRAPING_HOST'] || 'localhost:3001'
+    scraping_path = "http://#{scraping_host}/find"
+    uri = URI(scraping_path)
 
     http = Net::HTTP.new(uri.host, uri.port)
     req = Net::HTTP::Post.new(uri.path, 'Content-Type' => 'application/json')
