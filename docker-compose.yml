@@ -1,0 +1,23 @@
+
+services:
+  web:
+    build: .
+    environment:
+      - DATABASE_HOST=postgres
+      - SCRAPING_HOST=scraping:3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - redis
+      - scraping
+  postgres:
+    image: postgres:14
+    environment:
+      - POSTGRES_PASSWORD=postgres
+  redis:
+    image: redis:7
+  scraping:
+    build: https://github.com/aronkst/ruby-web-scraping.git#main
+    environment:
+      - APP_ENV=production
