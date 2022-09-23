@@ -16,8 +16,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_18_154050) do
 
   create_table "run_values", force: :cascade do |t|
     t.bigint "run_id", null: false
-    t.integer "page"
-    t.json "values"
+    t.integer "page", null: false
+    t.json "values", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["run_id"], name: "index_run_values_on_run_id"
@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_18_154050) do
   create_table "runs", force: :cascade do |t|
     t.bigint "search_id", null: false
     t.boolean "finish", default: false, null: false
+    t.boolean "error", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["search_id"], name: "index_runs_on_search_id"

@@ -3,9 +3,9 @@
 one:
   run: one
   page: 1
-  values: 
+  values: '{}'
 
 two:
   run: two
   page: 1
-  values: 
+  values: '{}'

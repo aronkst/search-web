@@ -2,6 +2,10 @@
 
 one:
   search: one
+  finish: true
+  error: false
 
 two:
   search: two
+  finish: false
+  error: false

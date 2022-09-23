@@ -4,14 +4,18 @@ one:
   title: MyString
   url: MyString
   javascript: false
-  json: MyText
+  json: '{}'
   next_page: MyString
   count_pages: 1
+  html: MyText
+  values: '{}'
 
 two:
   title: MyString
   url: MyString
   javascript: false
-  json: MyText
+  json: '{}'
   next_page: MyString
   count_pages: 1
+  html: MyText
+  values: '{}'
