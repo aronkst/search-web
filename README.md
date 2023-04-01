@@ -1,4 +1,4 @@
-# Movie Recommender
+# Search Web
 
 This is a project that seeks information on a website using web scraping [ruby-web-scraping](https://github.com/aronkst/ruby-web-scraping).
 
