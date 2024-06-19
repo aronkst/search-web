@@ -1,10 +1,10 @@
 # Search Web
 
-This is a project that seeks information on a website using web scraping [ruby-web-scraping](https://github.com/aronkst/ruby-web-scraping).
+This project is designed to gather information from websites using web scraping techniques. Named [ruby-web-scraping](https://github.com/aronkst/ruby-web-scraping), it focuses on extracting relevant data efficiently and accurately.
 
-It can serve as a frontend of the [ruby-web-scraping](https://github.com/aronkst/ruby-web-scraping), being able to save what to look for in the website and all the results brought in the search.
+Serving as the frontend for the [ruby-web-scraping](https://github.com/aronkst/ruby-web-scraping), this application allows users to specify what information to search for on a website and saves all retrieved results. It provides an intuitive interface for managing search criteria and viewing the collected data.
 
-This application does not need to install Ruby, PostgreSQL or Redis, as this application runs inside Docker.
+One of the key advantages of this application is its ease of deployment. There is no need to install Ruby, PostgreSQL, or Redis on your system, as the entire application runs seamlessly within Docker containers. This ensures a streamlined setup process and a consistent execution environment.
 
 # System dependencies
 
